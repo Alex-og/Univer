@@ -1,5 +1,6 @@
 package repository;
 
+import exceptions.FullGroupException;
 import exceptions.NoSuchStudentException;
 import model.Student;
 
@@ -22,7 +23,10 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public void addStudentToGroup(Student student) {
+    public void addStudentToGroup(Student student) throws FullGroupException {
+        if (students.size() == capacity && !students.containsKey(student.getId())) {
+            throw new FullGroupException(student.getName() + " " + student.getSurName());
+        }
         students.putIfAbsent(student.getId(), student);
     }
 
