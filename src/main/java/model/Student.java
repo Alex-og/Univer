@@ -44,4 +44,12 @@ public class Student extends Person {
     public int hashCode() {
         return Objects.hash(id, group);
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", group=" + group +
+                '}';
+    }
 }

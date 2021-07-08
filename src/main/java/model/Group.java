@@ -5,6 +5,7 @@ import exceptions.MaxCapacityException;
 import exceptions.NoSuchStudentException;
 import exceptions.NoSuchSubjectException;
 import service.GroupService;
+import service.GroupServiceImpl;
 
 import java.util.Map;
 import java.util.Objects;
@@ -19,6 +20,7 @@ public class Group {
     public Group(int id, long specId) {
         this.id = id;
         this.specId = specId;
+        groupService = new GroupServiceImpl();
     }
 
     public int getId() {
@@ -106,5 +108,14 @@ public class Group {
     @Override
     public int hashCode() {
         return Objects.hash(id, specId, curator);
+    }
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "id=" + id +
+                ", specId=" + specId +
+                ", curator=" + curator +
+                '}';
     }
 }

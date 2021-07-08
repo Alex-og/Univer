@@ -3,6 +3,7 @@ package model;
 import exceptions.MaxCapacityException;
 import exceptions.NoSuchDepartmentException;
 import service.FacultyService;
+import service.FacultyServiceImpl;
 
 import java.util.Objects;
 import java.util.Set;
@@ -13,13 +14,14 @@ public class Faculty {
 
     public Faculty(String name) {
         this.name = name;
+        facultyService = new FacultyServiceImpl();
     }
 
     public void setFacultyService(FacultyService facultyService) {
         this.facultyService = facultyService;
     }
 
-    public void setDepartment(Department department) {
+    public void addDepartment(Department department) {
         try {
             facultyService.addDepartment(department);
         } catch (MaxCapacityException e) {
@@ -55,7 +57,9 @@ public class Faculty {
     @Override
     public String toString() {
         return "Faculty{" +
-                "name='" + name +
-                '}';
+                "name= '" + name +
+                "'}";
     }
+
+
 }

@@ -4,6 +4,7 @@ import exceptions.MaxCapacityException;
 import exceptions.NoSuchDepartmentException;
 import model.Department;
 import repository.DepartmentRepository;
+import repository.DepartmentRepositoryImpl;
 
 import java.util.Set;
 
@@ -11,8 +12,8 @@ public class FacultyServiceImpl implements FacultyService {
 
     private DepartmentRepository departmentRepo;
 
-    public DepartmentRepository getDepartmentRepo() {
-        return departmentRepo;
+    public FacultyServiceImpl() {
+        departmentRepo = new DepartmentRepositoryImpl();
     }
 
     public void setDepartmentRepo(DepartmentRepository departmentRepo) {

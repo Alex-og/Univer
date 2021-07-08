@@ -7,7 +7,9 @@ import exceptions.NoSuchSubjectException;
 import model.Student;
 import model.Subject;
 import repository.StudentRepository;
+import repository.StudentRepositoryImpl;
 import repository.SubjectRepository;
+import repository.SubjectRepositoryImpl;
 
 import java.util.Map;
 import java.util.Set;
@@ -16,6 +18,11 @@ public class GroupServiceImpl implements GroupService {
 
     private StudentRepository studentRepo;
     private SubjectRepository subjectRepo;
+
+    public GroupServiceImpl() {
+        subjectRepo = new SubjectRepositoryImpl();
+        studentRepo = new StudentRepositoryImpl();
+    }
 
     public StudentRepository getStudentRepo() {
         return studentRepo;

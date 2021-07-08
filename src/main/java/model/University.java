@@ -1,8 +1,6 @@
 package model;
 
-import exceptions.MaxCapacityException;
-import exceptions.NoSuchFacultyException;
-import exceptions.NoSuchSubjectException;
+import exceptions.*;
 import service.UniversityService;
 import service.UniversityServiceImpl;
 

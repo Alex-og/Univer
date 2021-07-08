@@ -42,4 +42,12 @@ public class Curator extends Person {
     public int hashCode() {
         return Objects.hash(groups);
     }
+
+    @Override
+    public String toString() {
+        return "Curator{" +
+                "name = " + this.getName() +
+                " surName = " + this.getSurName() +
+                "}";
+    }
 }
